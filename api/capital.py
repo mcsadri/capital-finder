@@ -11,7 +11,21 @@ class handler(BaseHTTPRequestHandler):
         query_string_list = parse.parse_qsl(url_components.query)
         dictionary = dict(query_string_list)
 
+        # localhost testing URLs
+        # http://localhost:8000/api/capital?name=spain
+
         # do the stuff
+        print("capital-finder")
+        country_api_url = f"https://restcountries.com/v3.1/name/{dictionary.get('name')}"
+        print("the country name search api url is:", country_api_url)
+        country_response = requests.get(country_api_url)
+        country_data = country_response.json()
+        # print("the country response is:", country_data)
+        # country_capital = country_data[0]["capital"][0]
+        # print("the capital is:", country_capital)
+
+
+        # capital_api_url = f"https://restcountries.com/v3.1/capital/{dictionary.get('name')}"
 
 
 
@@ -33,4 +47,4 @@ if __name__ == '__main__':
     server_address = ('localhost', 8000)
     httpd = HTTPServer(server_address, handler)
     print(f'Starting httpd server on port: {server_address[0]}:{server_address[1]}')
-    httpd.serve_forver()
+    httpd.serve_forever()
