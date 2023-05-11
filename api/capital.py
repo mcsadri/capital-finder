@@ -11,9 +11,10 @@ class handler(BaseHTTPRequestHandler):
         query_string_list = parse.parse_qsl(url_components.query)
         dictionary = dict(query_string_list)
 
-        # do the stuff
+        # log to terminal
         print("capital-finder")
         print("the query string is:", dictionary.get("name"))
+
         # if the query string is not empty
         if dictionary.get("name"):
             # given the name of a country get the name of the capital city
@@ -32,7 +33,7 @@ class handler(BaseHTTPRequestHandler):
                 else:
                     capital_data = capital_response.json()
                     capital_country = capital_data[0]["name"]["common"]
-                    message = f"{dictionary.get('name').title()} is the capital of {capital_country}"
+                    message = f"{dictionary.get('name').title()} is the capital of {capital_country}."
 
             # if the query name matched a country name
             else:

@@ -15,8 +15,13 @@ An introduction to Serverless Functions using REST APIs
 ## User Acceptance Tests
 
 - [ ] Project README.md should include working example urls for deployed function.
-  - [ ] doodah test 1
-  - [ ] doodah test 2
-  - [ ] doodah test 3
-  - [ ] doodah test 4
-  - [ ] doodah test 5
+  - [ ] Search with the name of a country to return its capital city:
+    - [https://capital-finder-mcsadri.vercel.app/api/capital?name=belgium](https://capital-finder-mcsadri.vercel.app/api/capital?name=belgium)
+  - [ ] Search with the name of a capital city to return its country name
+    - [https://capital-finder-mcsadri.vercel.app/api/capital?name=berlin](https://capital-finder-mcsadri.vercel.app/api/capital?name=berlin)
+  - [ ] Search with an invalid country or capital city name
+    - [https://capital-finder-mcsadri.vercel.app/api/capital?name=qwerty](https://capital-finder-mcsadri.vercel.app/api/capital?name=qwerty)
+  - [ ] Search with an emptry query string
+    - [https://capital-finder-mcsadri.vercel.app/api/capital?name=](https://capital-finder-mcsadri.vercel.app/api/capital?name=)
+  - [ ] Search with name in all UPPER to show case conversion to Title
+    - [https://capital-finder-mcsadri.vercel.app/api/capital?name=TOKYO](https://capital-finder-mcsadri.vercel.app/api/capital?name=TOKYO)
