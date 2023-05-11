@@ -11,9 +11,6 @@ class handler(BaseHTTPRequestHandler):
         query_string_list = parse.parse_qsl(url_components.query)
         dictionary = dict(query_string_list)
 
-        # localhost testing URLs
-        # http://localhost:8000/api/capital?name=spain
-
         # do the stuff
         print("capital-finder")
         print("the query string is:", dictionary.get("name"))
@@ -61,3 +58,4 @@ if __name__ == '__main__':
     httpd = HTTPServer(server_address, handler)
     print(f'Starting httpd server on port: {server_address[0]}:{server_address[1]}')
     httpd.serve_forever()
+    # localhost testing URL: http://localhost:8000/api/capital?name=spain
